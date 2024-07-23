@@ -1,0 +1,131 @@
+        /*start global rules */
+*{-webkit-box-sizing:border-box;   -moz-box-sizing:border-box;    box-sizing:border-box;}
+body{font-family: "Work Sans" , sans-serif;}
+:root{--main-color:#10cab7;}
+
+/* start container settings*/
+.parent{background-color: bisque;}
+.container{ padding-left: 15px;     padding-right: 15px;
+            margin-left: auto;      margin-right: auto;}
+/*diferrent width for diffirent screens*/
+@media(min-width: 768px)   {.container {width: 750px;}}/*small*/
+@media(min-width: 922px)   {.container {width: 970px;}}/*meduim*/
+@media(min-width: 1200px)   {.container {width: 1170px;}}/*large*/
+/* end container settings*/
+        /*end global rules*/
+
+        /*START HEADER  (القائمة العلوية)*/
+.header{padding: 20px;}
+.header .container{display: flex; justify-content: space-between;  align-items:center;}
+.header  .logo{width: 60px;}
+/* start icon*/
+.header .links{position: relative;}
+.header .links .icon{ width: 30px; display: flex;  flex-wrap: wrap;justify-content: flex-end;}
+.header .links:hover .icon span:nth-child(2){width: 100%;}
+.header .links .icon span{background-color: #333;margin-bottom: 4px;}
+.header .links .icon span:first-child{height: 3px;width: 100%;}
+.header .links .icon span:nth-child(2){height: 3px;width: 60%;  transition: 0.3s;}
+.header .links .icon span:last-child{height: 3px;width: 100%;}
+/* shakl 9aima */
+.header .links  ul{list-style-type: none; margin: 0; padding: 0; background-color: beige;position: absolute ;right: 0; min-width: 200px; top:calc(100% + 15px); display: none; z-index: 1;}
+.header .links  ul::before{content: "";  border-width: 10px; border-style: solid; border-color: transparent transparent  beige transparent ; 
+                        position: absolute;  right: 5px; top: -20px;}
+.header .links:hover  ul{display:  block;}                        
+.header .links  ul li a {display: block; padding: 15px; text-decoration: none; color: #333; transition: 0.3s;}
+.header .links  ul li a:hover{padding-left: 25px;}
+.header .links  ul li:not(:last-child) a{border-bottom: 1px solid #ddd;}
+        /*END HEADER*/
+
+        /*start landing section*/
+.landing{background-image: url(./images/montans.jpg); background-size:cover;height:calc(100vh - 64px);position: relative;}
+.landing .intro-text {position: absolute; left: 50%; top: 50%; transform: translate(-50% , -50%); text-align: center; width: 420px; max-width: 100%;}
+.landing .intro-text  h1 {margin:0; font-weight: bold; font-size: 50px; color: var(--main-color);}
+.landing .intro-text  p {font-size: 19px; line-height: 1.8;}
+        /*end landing section*/
+
+        /*start features*/
+.features{padding-top: 60px; padding-bottom: 60px; background-color: rgba(245, 245, 220, 0.329);}
+.features .container{display: grid; grid-gap: 20px; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr) ); }
+.features  .feat{padding: 20px; text-align: center;}
+.features  .feat i{color: var(--main-color);font-size: 55px;}
+.features  .feat h3{font-weight: 800;margin: 30px 0;}
+.features  .feat p{line-height: 1.8;     color: #777;}
+        /*end features*/
+
+
+        /*start Services*/
+/*start onwan (h3)*/
+.special-heding{color: #ebeced;font-size: 100px;text-align: center; font-weight: 800;letter-spacing: -3px; margin: 0;}
+.special-heding + p{color: #777; text-align: center; margin: -30px 0 0 ; font-size: 20px;}
+@media(max-width: 768px){ .special-heding{font-size: 60px;}
+.special-heding + p {font-size:13px; margin: -20px 0 0;}}
+/*end onwan (h3)*/
+/*start shakl al 9aima*/
+.services{padding-top: 60px; padding-bottom: 60px;}
+.services .services-content{display: grid; grid-gap: 30px; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr) );margin-top: 80px;}
+.services .services-content .srv{display: flex; margin-bottom: 40px;}     
+@media(max-width: 767px){ .services .services-content .srv{flex-direction: column  ;text-align: center;}  }
+/*tadiil l3anasir*/
+.services  i{color: var(--main-color);flex-basis: 60px;font-size: 40px;}
+.services .services-content .srv .text{flex: 1;}
+.services .services-content .srv .text h3{margin: 0;}
+.services .services-content .srv .text p{color: #777; font-weight: 300; line-height: 1.6;}
+.services .services-content  img{width: 250px; margin-left: 30px;margin-top: 10px   ; box-shadow: 0px 0px 7px 5px red , 0px 0px 12px 16px black;}
+@media(max-width: 1199px){.services .services-content img {display: none;}}
+        /*end Services*/
+
+        /*start Portfule*/
+.portfolio{background-color:rgba(245, 245, 220, 0.329) ;padding-top: 60px; padding-bottom: 60px;}
+.portfolio .portfolio-content{display: grid; grid-gap: 30px; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr) );margin-top: 80px;}
+/*card + img  parametrs */
+.portfolio .portfolio-content .card{background-color: white;max-height: 710px;  }
+.portfolio .portfolio-content .card img{width: 85%; height: 60%;margin-left: 25px;}
+.portfolio .portfolio-content .card .info{padding: 20px;}
+ /*card h3 parametrs */
+.portfolio .portfolio-content .card .info h3{text-align: center; font-size: 25px; margin: 0;}
+.portfolio .portfolio-content .card .info .art {color: rgb(206, 203, 15);}
+.portfolio .portfolio-content .card .info .alya{color: rgb(0, 183, 255);}
+.portfolio .portfolio-content .card .info .song{color: #9900ff;}
+.portfolio .portfolio-content .card .info p{color: #777; margin-bottom: 0;}
+ /*mobile + shadows */
+@media(max-width: 767px){.portfolio .portfolio-content .card img{width: 75%; height: 55%;margin-left: 35px;}}
+@media(max-width: 767px){.portfolio .portfolio-content .card .info{border-bottom: 1px solid #77777750;}}   
+.portfolio .card .song-pic{box-shadow:1px 1px 13px 5px #9900ff  ;}       
+.portfolio .card .art-pic{box-shadow: 1px 1px 13px 5px rgb(206, 203, 15) ;} 
+.portfolio .card .alya-pic{box-shadow: 1px 1px 13px 5px  rgb(0, 183, 255);} 
+        /*end Portfule*/
+
+        /*start About menu*/
+.About{padding-top: 60px; padding-bottom: 60px;}
+.About .about-content{ margin-top: 100px; display: flex; flex-wrap: wrap; justify-content: space-between;}
+/*image prametre */
+.About .about-content .image{position: relative ; width: 320px; height: 450px;box-shadow: 1px 1px 10px 10px rgb(10, 53, 133); }
+.About .about-content .image img{width: 100%; height: 100%;}
+.About .about-content .image::before {content:"";  position: absolute;height: calc(100% + 80px);width: 100px; ;background-color: #1e6329;top: -40px; z-index: -1;left: -20px;}
+/*right text*/
+.About .about-content .text{flex: 1; padding-left: 100px; }
+.About .about-content .text p:first-of-type{margin-bottom: 50px; font-weight: 700; line-height: 2;}
+.About .about-content .text hr{  display: inline-block; border-color: #00ff2a;width: 70%;}
+.About .about-content .text p:last-of-type{margin-top: 50px; line-height: 2; color: #777;}
+/*900px view */        
+@media(max-width: 991px){.About .about-content{text-align: center; flex-direction: column;}}
+@media(max-width: 991px){.About .about-content .image::before{display: none;}}
+@media(max-width: 991px){.About .about-content .image{margin: 0 auto 60px; width: 250px; height: 370px;}}
+@media(max-width: 991px){.About .about-content .text{margin-left: -80px;margin-right: 20px;}}
+        /*end About menu*/
+
+
+        /*start contact*/
+.contact{padding-top: 60px; padding-bottom: 60px; background-color: rgba(245, 245, 220, 0.329);}
+.contact .container .info{text-align: center; margin: 100px 0 0 ; line-height: -5px;}
+.contact .container .info  .p1{font-size: 35px;font-weight: 800; margin-top: 0px; margin-bottom: 15px; letter-spacing: -2px; color: #43529b;}
+.contact .container .info a{text-decoration: none; font-size: 33px;font-weight: 800; color: var(--main-color);letter-spacing: -2px; }
+.contact .container .info  .social{margin-top: 15px;}
+.contact .container .info  .social  i{color:#43529b; font-size: 20px;margin-left: 4px;}
+        /*end contact*/
+
+
+        /*start last menu*/
+.Last {padding: 30px; text-align: center; margin: 0; background-color: #43529b; color: white; font-size: 18px;}
+.Last span{color: var(--main-color); font-weight: 800;}
+        /*end last menu*/
